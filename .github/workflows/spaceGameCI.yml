@@ -46,4 +46,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: dotnet-core-app
-          path: Tailspin.SpaceGame.Web/publish
+          path: ./publish
