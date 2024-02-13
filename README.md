@@ -1,4 +1,5 @@
-
+# Build Status
+[![Space Game CI](https://github.com/Evilazaro/tailspin-spacegame-web/actions/workflows/spaceGameCI.yml/badge.svg)](https://github.com/Evilazaro/tailspin-spacegame-web/actions/workflows/spaceGameCI.yml)
 # Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
