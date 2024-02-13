@@ -20,14 +20,19 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: 8.0.x
+      
       - name: Install NPM dependencies
         run: npm install
+      
       - name: Run Custom Scrip
         run: ./node_modules/.bin/node-sass Tailspin.SpaceGame.Web/wwwroot --output Tailspin.SpaceGame.Web/wwwroot
+      
       - name: Custom Scrip 2
         working-directory: Tailspin.SpaceGame.Web/wwwroot
-        run: echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt
+        run: echo $(GITHUB_RUN_ID) > buildinfo.txt
+      
       - name: Restore dependencies
         run: dotnet restore Tailspin.SpaceGame.Web
+      
       - name: Build
         run: dotnet build Tailspin.SpaceGame.Web --no-restore
