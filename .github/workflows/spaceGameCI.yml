@@ -36,3 +36,15 @@ jobs:
       
       - name: Build
         run: dotnet build Tailspin.SpaceGame.Web --no-restore
+
+      - name: Publish Artifact
+        run: dotnet publish Tailspin.SpaceGame.Web --no-restore --configuration Release --output ./publish
+        working-directory: Tailspin.SpaceGame.Web
+        env:
+          DOTNET_ROOT: /home/runner/.dotnet
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: dotnet-core-app
+          path: Tailspin.SpaceGame.Web/publish
