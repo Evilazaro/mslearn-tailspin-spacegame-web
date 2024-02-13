@@ -39,7 +39,6 @@ jobs:
 
       - name: Publish Artifact
         run: dotnet publish Tailspin.SpaceGame.Web --no-restore --configuration Release --output ./publish
-        working-directory: Tailspin.SpaceGame.Web
         env:
           DOTNET_ROOT: /home/runner/.dotnet
 
