@@ -26,8 +26,6 @@ jobs:
         run: npm run build
       - name: Run Custom Scrip
         run: ./node_modules/.bin/node-sass Tailspin.SpaceGame.Web/wwwroot --output Tailspin.SpaceGame.Web/wwwroot
-      - name: Gulp
-        uses: gulp@3
       - name: Custom Scrip 2
         working-directory: Tailspin.SpaceGame.Web/wwwroot
         run: echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt
